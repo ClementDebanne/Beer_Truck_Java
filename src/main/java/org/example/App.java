@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controllers.LoginController;
 import org.example.core.Conf;
 import org.example.core.Template;
 import org.example.middlewares.LoggerMiddleware;
@@ -10,6 +11,14 @@ import java.util.HashMap;
 public class App {
     public static void main(String[] args) {
         initialize();
+
+        // Instancier classe LoginController pour avoir un objet
+        // Classe = ADN
+        // Objet = Cellule
+
+        LoginController loginController = new LoginController();
+        Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
+
 
         Spark.get("/", (req, res) -> {
             return Template.render("home.html", new HashMap<>());
