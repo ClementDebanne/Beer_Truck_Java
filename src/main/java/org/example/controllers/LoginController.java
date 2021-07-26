@@ -70,7 +70,9 @@ public class LoginController {
             return Template.render("auth_signup.html", model);
         }
 
+        // Récupération des infos de la requete POST
         // On lit les informations du formulaire posté
+
         Map<String, String> query = URLUtils.decodeQuery(request.body());
         String username = query.get("username");
         String password = query.get("password");
@@ -81,7 +83,6 @@ public class LoginController {
             // probleme !!!
             // on a pas réussi a créer l'utliisateur
         }
-
 
         // Si tout s'est bien passé, on redirige l'utilisateur vers la page de login
         response.redirect("/login");

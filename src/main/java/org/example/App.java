@@ -23,11 +23,12 @@ public class App {
             return Template.render("home.html", new HashMap<>());
         });
 
-
-
         LoginController loginController = new LoginController();
         Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
 
+        Spark.get("/signup", (req, res) -> loginController.signUp(req, res));
+
+        Spark.post("/signup", (req, res) -> loginController.signUp(req, res));
 
 
     }
