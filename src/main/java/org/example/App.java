@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.controllers.LoginController;
 import org.example.core.Conf;
+import org.example.core.Database;
 import org.example.core.Template;
 import org.example.middlewares.LoggerMiddleware;
 import spark.Spark;
@@ -16,17 +17,25 @@ public class App {
         // Classe = ADN
         // Objet = Cellule
 
-        LoginController loginController = new LoginController();
-        Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
 
 
         Spark.get("/", (req, res) -> {
             return Template.render("home.html", new HashMap<>());
         });
+
+
+
+        LoginController loginController = new LoginController();
+        Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
+
+
+
     }
 
     static void initialize() {
         Template.initialize();
+
+        Database.get().checkConnection();
 
         // Display exceptions in logs
         Spark.exception(Exception.class, (e, req, res) -> e.printStackTrace());
