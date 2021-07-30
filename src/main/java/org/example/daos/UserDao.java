@@ -74,20 +74,27 @@ public class UserDao {
      * Crée un utilisateur en BDD et renvoie l'ID de ce nouvel utilisateur
      * @param username
      * @param password
+     * @param mail
+     * @param name
+     * @param surname
      */
-    public int createUser(String username, String password) {
+    public int createUser(String username, String password, String mail, String name, String surname) {
         Connection connection = Database.get().getConnection();
         int newId = 0;
         try {
             // On prépare la requête
             // puisque l'ID est auto généré, on met NULL pour cette colonne,
             // MySQL se chargera de mettre la bonne valeur
-            PreparedStatement st = connection.prepareStatement("INSERT INTO users VALUES (NULL, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement st = connection.prepareStatement("INSERT INTO usertest VALUES (Null, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
             st.setString(1, username);
             st.setString(2, password);
+            st.setString(3, mail);
+            st.setString(4, name);
+            st.setString(5, surname);
 
             st.executeUpdate();
+
             // On essaye de récupérer l'id de la ligne qui vient d'être créée en base
             ResultSet rs = st.getGeneratedKeys();
             if (rs.next()) {
@@ -95,7 +102,7 @@ public class UserDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+            }
         return newId;
     }
 }

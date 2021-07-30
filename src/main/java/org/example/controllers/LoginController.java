@@ -57,6 +57,11 @@ public class LoginController {
         return null;
     }
 
+
+
+
+
+
     /**
      * Permet de créer un nouvel utilisateur dans le cadre d'une inscription.
      * La page HTML aura soumis un formulaire (HTTP POST) avec les informations de l'utilisateur
@@ -76,9 +81,15 @@ public class LoginController {
         Map<String, String> query = URLUtils.decodeQuery(request.body());
         String username = query.get("username");
         String password = query.get("password");
+        String mail = query.get("Email Address");
+        String name = query.get("First Name");
+        String surname = query.get("Last Name");
+
+        System.out.println(username + password + mail + name + surname);
+
 
         // On crée l'utilisateur !
-        int newId = userDao.createUser(username, password);
+        int newId = userDao.createUser(username, password, mail, name, surname);
         if (newId <= 0) {
             // probleme !!!
             // on a pas réussi a créer l'utliisateur
