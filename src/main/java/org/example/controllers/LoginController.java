@@ -29,6 +29,18 @@ public class LoginController {
         return Template.render("login.html", model);
     }
 
+
+    public String contact(Request req, Response res){
+        Map<String, Object> model = new HashMap<>();
+        return Template.render("contact.html",model);
+    }
+
+
+
+
+
+
+
     /**
      * Permet de créer une session pour un utilisateur qui veut se connecter.
      * L'objectif est de retrouver les identifiants fourni dans la BDD.
@@ -42,7 +54,9 @@ public class LoginController {
         String password = query.get("password");
 
         // On essaye de récupérer l'utilisateur associé à ces identifiants
-        User user = userDao.getUserByCredentials(password, password);
+        User user = userDao.getUserByCredentials(username, password);
+
+        System.out.println(username + password);
 
         // L'utilisateur correspondant à ces identifiants n'a pas été trouvé
         if (user == null) {
@@ -56,6 +70,13 @@ public class LoginController {
         SessionUtils.createSession(user, request, response);
         return null;
     }
+
+
+
+
+
+
+
 
 
 

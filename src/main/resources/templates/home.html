@@ -1,12 +1,70 @@
 #parse("base.html")
 #@mainLayout()
-<h1>Home Template</h1>
-<div>
-    <img src="img/java.jpg" />
 
-    <a href="/login" >
-      login
-   </a>
+<header id="mainHeader"> <!-- Début du Header -->
+    <a href="/fr" title="Vers la page d'acceuil" >
+        <img id= "logoImg" src="img/logo.jpg" alt="Logo" height="50" >
+    </a>
+    <h1>Beer Truck</h1>
 
-</div>
+        <h1>Menu Principal</h1>
+        <div id="connexion">
+            <a href="/login" title="Vers la page de connexion" >Login </a>
+        </div>
+        <div class="social-link">
+           <section id="social-network">
+               <h2> Suivez-nous </h2>
+               <a href="https://twitter.com/" title="Suivez-nous" target="_blank" class="twitter-link"></a>
+               <a href="https://www.facebook.com/" title="Suivez-nous" target="_blank" class="facebook-link"></a>
+               <a href="https://www.youtube.com/" title="Suivez-nous" target="_blank" class="youtube-link"></a>
+               <a href="https://instagram.com/" title="Suivez-nous" target="_blank" class="instagram-link"></a>
+           </section>
+        </div>
+        <div class="language" id="language-block">
+            <ul>
+                <li>
+                    <a href="/en">En</a>
+                </li>
+                <li>
+                    <a href="/fr">Fr</a>
+                </li>
+                <li>
+                    <a href="/es">Es</a>
+                </li>
+                <li>
+                    <a href="/de">De</a>
+                </li>
+            </ul>
+        </div>
+    <nav id="mainNav">
+        <ul class="main-menu">
+            <li>
+                <a href="/fr" title="Vers la page d'acceuil" >Acceuil </a>
+            </li>
+            <li>
+                <a href="/event" title="Voir tous les évènements où nous sommes" >Nos évènements </a>
+            </li>
+            <li>
+                <a href="/about" title="Tous savoir sur nous" >À propos </a>
+            </li>
+            <li>
+                <a href="/contact" title="Pour pouvoir nous contacter" >Contact </a>
+            </li>
+        </ul>
+    </nav>
+    <button id="menuToggle">
+        <img src="img/hamburger.svg" alt="Ouvrir / Fermer le menu">
+    </button>
+</header> <!-- Fin du header -->
+
+<section>
+
+</section>
+
+<footer> <!-- Début du footer -->
+    <p>© Copyright Clément Debanne - 2021</p>
+    <a href="" title="Notre politique de confidentialité" >Politique de confidentialité </a>
+    <a href="/contact" title="Pour nous contacter" >Contact </a>
+    <a href="" title="Foire aux questions" >FAQ </a>
+</footer> <!-- Fin du footer -->
 #end

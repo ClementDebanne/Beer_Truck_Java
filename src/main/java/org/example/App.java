@@ -18,14 +18,21 @@ public class App {
         // Objet = Cellule
 
 
+        // Spark.get("/acceuil", (req, res) -> {
+        // A mettre quand security.html fait
 
-        Spark.get("/", (req, res) -> {
+
+        Spark.get("/fr", (req, res) -> {
             return Template.render("home.html", new HashMap<>());
         });
 
         LoginController loginController = new LoginController();
 
+        Spark.get("/contact", (req, res) -> loginController.contact(req,res));
+
         Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
+
+        Spark.post("/login", (req, res) -> loginController.authenticate(req, res));
 
         Spark.get("/signup", (req, res) -> loginController.signUp(req, res));
 
