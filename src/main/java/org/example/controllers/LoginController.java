@@ -102,11 +102,12 @@ public class LoginController {
         Map<String, String> query = URLUtils.decodeQuery(request.body());
         String username = query.get("username");
         String password = query.get("password");
-        String mail = query.get("Email Address");
-        String name = query.get("First Name");
-        String surname = query.get("Last Name");
+        String mail = query.get("Email_Address");
+        String name = query.get("First_Name");
+        String surname = query.get("Last_Name");
 
         System.out.println(username + password + mail + name + surname);
+        System.out.println(request.body());
 
 
         // On crée l'utilisateur !
