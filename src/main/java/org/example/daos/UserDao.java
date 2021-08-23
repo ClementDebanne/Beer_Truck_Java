@@ -8,7 +8,7 @@ import org.example.core.Database;
 
 public class UserDao {
 
-    /**
+    /**------------------------------------------------------------------------------------------
      * Cette fonction va récupérer l'utilisateur qui correspond aux identifiants passés en paramètres.
      * Elle fait 2 opérations principales :
      * 1. Exécuter une requête SQL a partir des paramètres
@@ -70,6 +70,10 @@ public class UserDao {
 
 
 
+
+
+
+
     /**
      * Crée un utilisateur en BDD et renvoie l'ID de ce nouvel utilisateur
      * @param username
@@ -85,7 +89,7 @@ public class UserDao {
             // On prépare la requête
             // puisque l'ID est auto généré, on met NULL pour cette colonne,
             // MySQL se chargera de mettre la bonne valeur
-            PreparedStatement st = connection.prepareStatement("INSERT INTO usertest VALUES (Null, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement st = connection.prepareStatement("INSERT INTO users VALUES (Null, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
             st.setString(1, username);
             st.setString(2, password);

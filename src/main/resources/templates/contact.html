@@ -1,97 +1,112 @@
-#parse("base.html")
-#@mainLayout()
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Default title</title>
+</head>
 
 
-<header id="mainHeader"> <!-- Début du Header -->
-    <a href="/fr" title="Vers la page d'acceuil" >
-        <img id= "logoImg" src="img/logo.jpg" alt="Logo" height="50" >
-    </a>
-    <h1>Beer Truck</h1>
+<body>
+<div id="content">
+    <header id="mainHeader"> <!-- Début du Header -->
+        <a href="/fr" title="Vers la page d'acceuil" >
+            <img id= "logoImg" src="img/logo.jpg" alt="Logo" height="50" >
+        </a>
+        <h1>Beer Truck</h1>
 
-    <h1>Menu Principal</h1>
-    <div id="connexion">
-        <a href="/login" title="Vers la page de connexion" >Login </a>
-    </div>
-    <div class="social-link">
-        <section id="social-network">
-            <h2> Suivez-nous </h2>
-            <a href="https://twitter.com/" title="Suivez-nous" target="_blank" class="twitter-link"></a>
-            <a href="https://www.facebook.com/" title="Suivez-nous" target="_blank" class="facebook-link"></a>
-            <a href="https://www.youtube.com/" title="Suivez-nous" target="_blank" class="youtube-link"></a>
-            <a href="https://instagram.com/" title="Suivez-nous" target="_blank" class="instagram-link"></a>
-        </section>
-    </div>
-    <div class="language" id="language-block">
-        <ul>
-            <li>
-                <a href="/en">En</a>
-            </li>
-            <li>
-                <a href="/fr">Fr</a>
-            </li>
-            <li>
-                <a href="/es">Es</a>
-            </li>
-            <li>
-                <a href="/de">De</a>
-            </li>
-        </ul>
-    </div>
-    <nav id="mainNav">
-        <ul class="main-menu">
-            <li>
-                <a href="/fr" title="Vers la page d'acceuil" >Acceuil </a>
-            </li>
-            <li>
-                <a href="/event" title="Voir tous les évènements où nous sommes" >Nos évènements </a>
-            </li>
-            <li>
-                <a href="/about" title="Tous savoir sur nous" >À propos </a>
-            </li>
-            <li>
-                <a href="/contact" title="Pour pouvoir nous contacter" >Contact </a>
-            </li>
-        </ul>
-    </nav>
-    <button id="menuToggle">
-        <img src="img/hamburger.svg" alt="Ouvrir / Fermer le menu">
-    </button>
-</header> <!-- Fin du header -->
+        <h1>Menu Principal</h1>
+        <div id="connexion">
+            <a href="/login" title="Vers la page de connexion" >Login </a>
+        </div>
+        <div class="social-link">
+            <section id="social-network">
+                <h2> Suivez-nous </h2>
+                <a href="https://twitter.com/" title="Suivez-nous" target="_blank" class="twitter-link"></a>
+                <a href="https://www.facebook.com/" title="Suivez-nous" target="_blank" class="facebook-link"></a>
+                <a href="https://www.youtube.com/" title="Suivez-nous" target="_blank" class="youtube-link"></a>
+                <a href="https://instagram.com/" title="Suivez-nous" target="_blank" class="instagram-link"></a>
+            </section>
+        </div>
+        <div class="language" id="language-block">
+            <ul>
+                <li>
+                    <a href="/en">En</a>
+                </li>
+                <li>
+                    <a href="/fr">Fr</a>
+                </li>
+                <li>
+                    <a href="/es">Es</a>
+                </li>
+                <li>
+                    <a href="/de">De</a>
+                </li>
+            </ul>
+        </div>
+        <nav id="mainNav">
+            <ul class="main-menu">
+                <li>
+                    <a href="/fr" title="Vers la page d'acceuil" >Acceuil </a>
+                </li>
+                <li>
+                    <a href="/event" title="Voir tous les évènements où nous sommes" >Nos évènements </a>
+                </li>
+                <li>
+                    <a href="/about" title="Tous savoir sur nous" >À propos </a>
+                </li>
+                <li>
+                    <a href="/contact" title="Pour pouvoir nous contacter" >Contact </a>
+                </li>
+            </ul>
+        </nav>
+        <button id="menuToggle">
+            <img src="img/hamburger.svg" alt="Ouvrir / Fermer le menu">
+        </button>
+    </header> <!-- Fin du header -->
 
 
-<section id="pageContent" class="oneCol contact">
-            <main>
-                <h1>Contactez-nous</h1>
-                <p>Merci de compléter le formulaire suivant pour nous contacter. Tous les champs de ce formulaire sont requis.</p>
-                <form id="frmContact" action="/merci">
+    <section id="pageContent" class="oneCol contact">
+        <main>
+            <h1>Contactez-nous</h1>
+            <p>Merci de compléter le formulaire suivant pour nous contacter. Tous les champs de ce formulaire sont requis.</p>
+            <form id="frmContact" action="/merci">
+                <div>
                     <div>
-                        <div>
-                            <label for="fName">Prénom</label>
-                            <input type="text" name="fName" id="fName" required autofocus />
-                        </div>
-                        <div>
-                            <label for="lName">Nom de famille</label>
-                            <input type="text" name="lName" id="lName" required />
-                        </div>
-                        <div>
-                            <label for="email">Votre e-mail</label>
-                            <input type="email" name="email" id="email" required />
-                        </div>
+                        <label for="fName">Prénom</label>
+                        <input type="text" name="fName" id="fName" required autofocus />
                     </div>
                     <div>
-                        <div>
-                            <label for="message">Votre message</label>
-                            <textarea name="message" id="message" required></textarea>
-                        </div>
+                        <label for="lName">Nom de famille</label>
+                        <input type="text" name="lName" id="lName" required />
                     </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-            </main>
-</section>
+                    <div>
+                        <label for="email">Votre e-mail</label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="message">Votre message</label>
+                        <textarea name="message" id="message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </main>
+    </section>
 
-<footer> <!-- Début du footer -->
-    <p>© Copyright Clément Debanne - 2021</p>
-    <a href="" title="Notre politique de confidentialité" >Politique de confidentialité </a>
-    <a href="/contact" title="Pour nous contacter" >Contact </a>
-    <a href="" title="Foire aux questions" >FAQ </a>
-</footer> <!-- Fin du footer -->
+    <footer> <!-- Début du footer -->
+        <p>© Copyright Clément Debanne - 2021</p>
+        <a href="" title="Notre politique de confidentialité" >Politique de confidentialité </a>
+        <a href="/contact" title="Pour nous contacter" >Contact </a>
+        <a href="" title="Foire aux questions" >FAQ </a>
+    </footer> <!-- Fin du footer -->
+</div>
+
+</body>
+
+</html>
+

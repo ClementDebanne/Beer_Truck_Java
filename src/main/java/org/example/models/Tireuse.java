@@ -17,6 +17,62 @@ public class Tireuse {
     public double longitude;
     public String description;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(String origine) {
+        this.origine = origine;
+    }
+
+    public float getPrix_litre() {
+        return prix_litre;
+    }
+
+    public void setPrix_litre(float prix_litre) {
+        this.prix_litre = prix_litre;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Tireuse(int id, String nom, String origine, float prix_litre, double latitude, double longitude, String description) {
         this.id = id;
         this.nom = nom;
@@ -26,4 +82,5 @@ public class Tireuse {
         this.longitude = longitude;
         this.description = description;
     }
+
 }

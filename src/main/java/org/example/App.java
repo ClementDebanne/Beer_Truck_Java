@@ -1,6 +1,9 @@
 package org.example;
 
+import org.example.controllers.ContactController;
 import org.example.controllers.LoginController;
+import org.example.controllers.TireuseController;
+import org.example.controllers.TireuseDetailController;
 import org.example.core.Conf;
 import org.example.core.Database;
 import org.example.core.Template;
@@ -18,17 +21,18 @@ public class App {
         // Objet = Cellule
 
 
-        // Spark.get("/acceuil", (req, res) -> {
-        // A mettre quand security.html fait
 
+        // Spark.get("/fr", (req, res) -> {
+        //    return Template.render("home.html", new HashMap<>());
+        // });
 
-        Spark.get("/fr", (req, res) -> {
-            return Template.render("home.html", new HashMap<>());
-        });
-
+        TireuseController tireuseController = new TireuseController();
         LoginController loginController = new LoginController();
+        ContactController contactController = new ContactController();
+        TireuseDetailController tireuseDetailController = new TireuseDetailController();
 
-        Spark.get("/contact", (req, res) -> loginController.contact(req,res));
+
+        Spark.get("/fr",((req, res) -> tireuseController.home(req,res)));
 
         Spark.get("/login", (req, res) -> loginController.displayLogin(req, res));
 
@@ -38,7 +42,9 @@ public class App {
 
         Spark.post("/signup", (req, res) -> loginController.signUp(req, res));
 
+        Spark.get("/contact", (req, res) -> contactController.contactPage(req,res));
 
+        Spark.get("/tireuses",((req,res) -> tireuseDetailController.detailfinal(req, res)));
 
     }
 

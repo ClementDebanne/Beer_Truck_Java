@@ -22,18 +22,14 @@ public class LoginController {
     private final UserDao userDao = new UserDao();
 
     public String displayLogin(Request request, Response response) {
-         String myusername = "ROBIN";
-        // String myusername = User.username;
+        String myusername = "ROBIN";
+        // String myusername = testuser.username;
         Map<String, Object> model = new HashMap<>();
         model.put("username", myusername);
         return Template.render("login.html", model);
     }
 
 
-    public String contact(Request req, Response res){
-        Map<String, Object> model = new HashMap<>();
-        return Template.render("contact.html",model);
-    }
 
 
 
@@ -41,7 +37,10 @@ public class LoginController {
 
 
 
-    /**
+
+
+
+    /** ----------------------------------------------------------------------------------------------------------------
      * Permet de créer une session pour un utilisateur qui veut se connecter.
      * L'objectif est de retrouver les identifiants fourni dans la BDD.
      */
@@ -75,18 +74,10 @@ public class LoginController {
 
 
 
-
-
-
-
-
-
-
-
-    /**
+    /** ----------------------------------------------------------------------------------------------------------------
      * Permet de créer un nouvel utilisateur dans le cadre d'une inscription.
      * La page HTML aura soumis un formulaire (HTTP POST) avec les informations de l'utilisateur
-     * et cette fonction se charge de transmettre les infos à
+     * et cette fonction se charge de transmettre les infos
      */
     public String signUp(Request request, Response response) {
         // On peut vérifier la méthode HTTP qui a été utilisée pour accéder

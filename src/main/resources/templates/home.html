@@ -3,11 +3,12 @@
 
 <header id="mainHeader"> <!-- Début du Header -->
     <a href="/fr" title="Vers la page d'acceuil" >
-        <img id= "logoImg" src="img/logo.jpg" alt="Logo" height="50" >
+        <img id= "logoImg" src="img/logo.png" alt="Logo">
     </a>
+
     <h1>Beer Truck</h1>
 
-        <h1 class="visibilite">  Menu Principal</h1>
+        <h2 class="visibilite">  Menu Principal</h2>
         <div id="connexion">
             <a href="/login" title="Vers la page de connexion" >Login </a>
         </div>
@@ -68,13 +69,37 @@
     </button>
 </header> <!-- Fin du header -->
 
+
+
+
+
+
 <section>
     <p>
-        Ceci est la page d'acceuil
+
+        <h2>
+            LE TEXTE EST ICI
+        </h2>
+        <ul>
+            #foreach($liste.nom in $liste)
+                <li>
+                    <a href="/tireuses?id=$liste.id" title="Voir plus de détail" >$liste.nom </a>
+                </li>
+            #end
+
+
+        </ul>
     </p>
 </section>
 
-<footer> <!-- Début du footer -->
+
+
+
+
+
+
+
+<footer id="mainFooter"> <!-- Début du footer -->
     <p>© Copyright Clément Debanne - 2021</p>
     <a href="" title="Notre politique de confidentialité" >Politique de confidentialité </a>
     <a href="/contact" title="Pour nous contacter" >Contact </a>
